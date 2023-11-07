@@ -12,8 +12,7 @@ router.get('/', function(req, res) {
 
 app.get('/pagina.html', function (req, res) {
     res.sendFile(path.join(__dirname, 'pagina.html'));
-  });
-  
+});
 
 // Rota para processar o login
 router.post('/login', function(req, res) {
@@ -77,3 +76,4 @@ connection.connect((err) => {
 app.listen(port, ipAddress, () => {
     console.log(`Servidor rodando em http://${ipAddress}:${port}`);
 });
+
