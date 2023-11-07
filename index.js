@@ -22,7 +22,8 @@ router.post('/login', function(req, res) {
             res.status(500).send('Erro interno.');
         } else {
             if (results.length > 0) {
-                res.send('Login bem-sucedido!');
+                // Redireciona para "pagina.html" após um login bem-sucedido
+                res.redirect('/pagina.html');
             } else {
                 res.send('Credenciais inválidas. Por favor, tente novamente.');
             }
