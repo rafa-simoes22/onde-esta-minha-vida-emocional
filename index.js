@@ -10,6 +10,11 @@ router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/pagina.html', function (req, res) {
+    res.sendFile(path.join(__dirname, 'pagina.html'));
+  });
+  
+
 // Rota para processar o login
 router.post('/login', function(req, res) {
     const { username, password } = req.body;
@@ -23,7 +28,7 @@ router.post('/login', function(req, res) {
         } else {
             if (results.length > 0) {
                 // Redireciona para "pagina.html" após um login bem-sucedido
-                res.redirect('/pagina.html');
+                res.redirect('pagina.html');
             } else {
                 res.send('Credenciais inválidas. Por favor, tente novamente.');
             }
