@@ -1,15 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onde está?</title>
-</head>
-<body>
-    <form action="/usuarios">
-        <input type="text">
-        <input type="password">
-        <button>ok</button>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login e Cadastro</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+
+            h1 {
+                margin-top: 20px;
+            }
+
+            form {
+                display: none;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            label {
+                display: block;
+                margin-top: 10px;
+            }
+
+            input {
+                width: 100%;
+                padding: 5px;
+                margin-top: 5px;
+            }
+
+            button {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="loginForm" action="/login" method="post" style="display: block;">
+            <h1>Login</h1>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+            <p><a href="javascript:void(0)" onclick="showSignupForm()">Fazer Cadastro</a></p>
+        </form>
+
+        <form id="signupForm" action="/signup" method="post" style="display: none;">
+            <h1>Cadastro</h1>
+            <label for="newUsername">Digite seu nome:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+            <br>
+            <label for="newPassword">Defina uma senha: (Somente números)</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+            <br>
+            <button type="submit">Cadastrar</button>
+            <p><a href="javascript:void(0)" onclick="showLoginForm()">Voltar para o Login</a></p>
+        </form>
+
+        <script>
+            function showSignupForm() {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('signupForm').style.display = 'block';
+            }
+
+            function showLoginForm() {
+                document.getElementById('signupForm').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+            }
+        </script>
+    </body>
 </html>
