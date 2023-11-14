@@ -56,10 +56,12 @@ router.post('/signup', function(req, res) {
 // Rota para processar as ações do usuário
 router.post('/acao', function(req, res) {
     const { acao } = req.body;
-    const userId = obterIdUsuario(req); // Função fictícia para obter o ID do usuário logado
+    console.log("Valor recebido:", acao);
 
-    // Mapeia o valor booleano para 0 ou 1
-    const valorAcao = acao ? 1 : 0;
+    // Converter o valor booleano para 0 ou 1
+    const valorAcao = acao === 'true' ? 1 : 0;
+
+    const userId = obterIdUsuario(req); // Função fictícia para obter o ID do usuário logado
 
     // Inserir nova ação na tabela ações
     const query = 'INSERT INTO açoes (id_users, acao) VALUES (?, ?)';

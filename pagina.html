@@ -25,20 +25,22 @@
         // Adicione eventos de clique nas imagens
         $(document).ready(function() {
             $("#comum").click(function() {
+                console.log("Clicou em comum");
                 enviarAcao(false);
             });
-
+    
             $("#pontos").click(function() {
+                console.log("Clicou em pontos");
                 enviarAcao(true);
             });
         });
-
+    
         // Função para enviar ação para o servidor
         function enviarAcao(valor) {
             $.ajax({
                 url: "/acao",
                 method: "POST",
-                data: { acao: valor },
+                data: { acao: valor.toString() }, // Envie o valor booleano como uma string
                 success: function(response) {
                     console.log(response);
                     // Adicione qualquer manipulação de UI ou redirecionamento aqui, se necessário
@@ -49,6 +51,6 @@
                 }
             });
         }
-    </script>
+    </script>            
 </body>
 </html>
