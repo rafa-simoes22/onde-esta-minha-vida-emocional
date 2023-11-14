@@ -64,7 +64,7 @@ router.post('/acao', function(req, res) {
     const userId = obterIdUsuario(req); // Função fictícia para obter o ID do usuário logado
 
     // Inserir nova ação na tabela ações
-    const query = 'INSERT INTO açoes (id_users, acao) VALUES (?, ?)';
+    const query = 'INSERT INTO ações (id_users, acao) VALUES (?, ?)';
     connection.query(query, [userId, valorAcao], (err, results) => {
         if (err) {
             console.error('Erro ao registrar ação do usuário:', err);
