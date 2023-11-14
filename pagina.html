@@ -15,9 +15,40 @@
     <p>Teste</p>
     <div>
         <figure>
-            <img src="/assets/coelho.png" class="comum">
-            <img src="/assets/gost.png" class="pontos">
+            <img id="comum" src="/assets/coelho.png" class="comum">
+            <img id="pontos" src="/assets/gost.png" class="pontos">
         </figure>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // Adicione eventos de clique nas imagens
+        $(document).ready(function() {
+            $("#comum").click(function() {
+                enviarAcao(false);
+            });
+
+            $("#pontos").click(function() {
+                enviarAcao(true);
+            });
+        });
+
+        // Função para enviar ação para o servidor
+        function enviarAcao(valor) {
+            $.ajax({
+                url: "/acao",
+                method: "POST",
+                data: { acao: valor },
+                success: function(response) {
+                    console.log(response);
+                    // Adicione qualquer manipulação de UI ou redirecionamento aqui, se necessário
+                },
+                error: function(error) {
+                    console.error(error);
+                    // Adicione tratamento de erro aqui, se necessário
+                }
+            });
+        }
+    </script>
 </body>
 </html>

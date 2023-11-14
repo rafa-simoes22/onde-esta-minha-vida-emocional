@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const router = express.Router();
-const bodyParser = require('body-parser'); // Para processar os dados do formulário
+const bodyParser = require('body-parser'); // Para processar os dados do formulário 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -19,15 +19,17 @@ router.post('/login', function(req, res) {
     const { username, password } = req.body;
 
     // Consultar o banco de dados para verificar as credenciais
-    const query = 'SELECT * FROM users WHERE nome = ? AND senha = ?';
+    const query = 'SELECT id FROM users WHERE nome = ? AND senha = ?';
     connection.query(query, [username, password], (err, results) => {
         if (err) {
             console.error('Erro ao consultar o banco de dados:', err);
             res.status(500).send('Erro interno.');
         } else {
             if (results.length > 0) {
-                // Redireciona para "pagina.html" após um login bem-sucedido
-                res.redirect('pagina.html');
+                const userId = results[0].id;
+
+                // Redireciona para "pagina.html" e passa o ID do usuário
+                res.redirect(`/pagina.html?userId=${userId}`);
             } else {
                 res.send('Credenciais inválidas. Por favor, tente novamente.');
             }
@@ -50,6 +52,27 @@ router.post('/signup', function(req, res) {
         }
     });
 });
+
+// Rota para processar as ações do usuário
+router.post('/acao', function(req, res) {
+    const { acao } = req.body;
+    const userId = obterIdUsuario(req); // Função fictícia para obter o ID do usuário logado
+
+    // Mapeia o valor booleano para 0 ou 1
+    const valorAcao = acao ? 1 : 0;
+
+    // Inserir nova ação na tabela ações
+    const query = 'INSERT INTO açoes (id_users, acao) VALUES (?, ?)';
+    connection.query(query, [userId, valorAcao], (err, results) => {
+        if (err) {
+            console.error('Erro ao registrar ação do usuário:', err);
+            res.status(500).send('Erro interno.');
+        } else {
+            res.send('Ação registrada com sucesso!');
+        }
+    });
+});
+
 
 app.use('/', router);
 
@@ -77,3 +100,7 @@ app.listen(port, ipAddress, () => {
     console.log(`Servidor rodando em http://${ipAddress}:${port}`);
 });
 
+function obterIdUsuario(req) {
+    // Obtém o ID do usuário a partir dos parâmetros da URL
+    return req.query.userId || null;
+}
