@@ -15,8 +15,8 @@
     <p>Teste</p>
     <div>
         <figure>
-            <img id="comum" src="/assets/coelho.png" class="comum">
-            <img id="pontos" src="/assets/gost.png" class="pontos">
+            <img src="/assets/coelho.png" class="comum">
+            <img src="/assets/gost.png" class="pontos">
         </figure>
     </div>
 
@@ -24,12 +24,12 @@
     <script>
         // Adicione eventos de clique nas imagens
         $(document).ready(function() {
-            $("#comum").click(function() {
+            $(".comum").click(function() {
                 console.log("Clicou em comum");
                 enviarAcao(false);
             });
     
-            $("#pontos").click(function() {
+            $(".pontos").click(function() {
                 console.log("Clicou em pontos");
                 enviarAcao(true);
             });
