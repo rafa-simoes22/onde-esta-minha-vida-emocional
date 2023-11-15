@@ -8,180 +8,163 @@
         body {
             background-color: rgb(5, 0, 0);
         }
-        .prateleiras{
-            width: 150px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-            margin-left: 40%;
-        }
-        img {
-            width: 45px;
-            margin: -2px;
-        }
         .titulo { 
-            margin-top: -21px;
-            margin-left: -10px;
-            margin-right: -10px;
             height: 90px;
             background-color: rgba(228, 150, 5, 0.986);
+            display: flex;
+            justify-content: space-between;
         }
-        #morcegos {
-            margin-top: -60px;
-            margin-left: 2%;
+        .morcegos {
             height: 95%;
-            width: 150px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        #morcegos2 {
-            margin-top: -85px;
-            margin-left: 90%;
-            height: 95%;
-            width: 150px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            width: 10%;
         }
         h1 {
             text-align: center;
         }
-        .tamanho {
-            height: 55px;
-        }
         h2 {
-            margin-top: 2%;
-            margin-bottom: 4%;
-            color: azure;
             text-align: center;
+            color: azure;
+        }
+        .prateleiras {
+            display: grid;
+            grid-template-columns: repeat(10, minmax(35px, 1fr)); /* Use minmax para limitar a largura */
+            grid-template-rows: repeat(10, minmax(35px, 1fr)); /* Use minmax para limitar a altura */
+            max-width: 200px; /* Define a largura máxima da prateleira */
+            /*border: solid red;*/
+            margin-left: 38%;
+        }
+        figure {
+            /*border: 1px solid green;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0; /* Remove as margens padrão do elemento figure */
+        }
+        img {
+            max-width: 100%; /* Ajusta a largura máxima da imagem para o seu contêiner pai */
+            max-height: 100%; /* Ajusta a altura máxima da imagem para o seu contêiner pai */
         }
     </style>
 </head>
 <body>
     <div class="titulo">
+        <img class="morcegos" src="/assets/imagens/morcegos.png">
         <h1>Halloween</h1>
-        <img id="morcegos" src="/assets/imagens/morcegos.png">
-        <img id="morcegos2" src="/assets/imagens/morcegos.png">
+        <img class="morcegos" src="/assets/imagens/morcegos.png">
     </div>
     <h2>Clique nos itens de Halloween e receba Cashback!</h2>
     <div class="prateleiras">
-        <!--fileira1-->
-        <img src="/assets/imagens/produtos.png"> 
-        <img src="/assets/imagens/bolo.png">
-        <img src="/assets/imagens/pascoa.png">
-        <img src="/assets/imagens/guarda_chuva.png">
-        <img src="/assets/imagens/produtos.png">
-        <img src="/assets/imagens/banana.png">
-        <img class="tamanho"src="/assets/imagens/bolinho_rosa.png">
-        <img src="/assets/imagens/melancia.png">
-        <img src="/assets/imagens/bebida.png">
-        <img src="/assets/imagens/pincel.png">
-
-        <!--fileira2-->
-        <img src="/assets/imagens/guarda_chuva.png"> 
-        <img src="/assets/imagens/bebida.png">
-        <img class="tamanho" src="assets\imagens\ovo_pascoa.png">
-        <img class="tamanho" src="assets\imagens\coelhinho.png">
-        <img src="assets\imagens\bolo.png">
-        <img src="assets\imagens\pascoa.png">
-        <img src="assets\imagens\pincel.png">
-        <img src="assets\imagens\melancia.png">
-        <img class="tamanho" src="assets\imagens\cenoura.png">
-        <img src="assets\imagens\laranja.png">
-
-        <!--fileira3-->
-        <img src="assets\imagens\produtos.png">
-        <img src="assets\imagens\pascoa.png">
-        <img class="tamanho" src="assets\imagens\cenoura.png">
-        <img src="assets\imagens\bolo.png">
-        <img src="assets\imagens\3aboboras.png"> <!--abobora-->
-        <img src="assets\imagens\laranja.png">
-        <img src="assets\imagens\bebida.png">
-        <img src="assets\imagens\verduras.png">
-        <img class="tamanho" src="assets\imagens\ovo_pascoa.png">
-        <img src="assets\imagens\pincel.png">
-
-        <!--fileira4--> 
-        <img src="assets\imagens\balas.png"> <!--doces--> 
-        <img src="assets\imagens\banana.png">
-        <img src="assets\imagens\pincel.png">
-        <img class="tamanho" src="assets\imagens\coelhinho.png">
-        <img src="assets\imagens\carro.png">
-        <img src="assets\imagens\boneca.png">
-        <img class="tamanho" src="assets\imagens\pincel_preto.png">
-        <img class="tamanho" src="assets\imagens\cenoura.png">
-        <img src="assets\imagens\abobora.png"> <!--abobora-->
-        <img src="assets\imagens\bebida.png">
-
-        <!--fileira5-->
-        <img class="tamanho" src="assets\imagens\bolinho_rosa.png">
-        <img src="assets\imagens\melancia.png">
-        <img src="assets\imagens\bolo.png">
-        <img src="assets\imagens\boneca.png">
-        <img src="assets\imagens\laranja.png"> 
-        <img src="assets\imagens\banana.png">
-        <img src="assets\imagens\produtos.png">
-        <img src="assets\imagens\verduras.png">
-        <img src="assets\imagens\melancia.png">
-        <img src="assets\imagens\guarda_chuva.png">
-
-        <!--fileira6-->
-        <img src="assets\imagens\boneca.png"> 
-        <img src="assets\imagens\banana.png">
-        <img src="assets\imagens\guarda_chuva.png">
-        <img src="assets\imagens\verduras.png">
-        <img src="assets\imagens\carro.png">
-        <img src="assets\imagens\laranja.png"> 
-        <img src="assets\imagens\abobora.png"> <!--abobora-->
-        <img src="assets\imagens\boneca.png">
-        <img src="assets\imagens\pincel.png">
-        <img class="tamanho" src="assets\imagens\cenoura.png">
-
-        <!--fileira7-->
-        <img src="assets\imagens\bolo.png"> 
-        <img src="assets\imagens\carro.png">
-        <img src="assets\imagens\pincel.png">
-        <img src="assets\imagens\melancia.png">
-        <img src="assets\imagens\banana.png">
-        <img src="assets\imagens\produtos.png">
-        <img src="assets\imagens\fantasma.png"> <!-- fantasma -->
-        <img src="assets\imagens\pascoa.png">
-        <img class="tamanho" src="assets\imagens\ovo_pascoa.png"> 
-        <img src="assets\imagens\melancia.png">
-
-        <!--fileira8-->
-        <img class="tamanho" src="assets\imagens\cenoura.png"> 
-        <img class="tamanho" src="assets\imagens\balas.png"> <!--doces-->
-        <img class="tamanho" src="assets\imagens\bolinho_rosa.png">
-        <img src="assets\imagens\bebida.png">
-        <img src="assets\imagens\guarda_chuva.png">
-        <img src="assets\imagens\bombom.png"> <!-- doces-->
-        <img src="assets\imagens\coelhinho.png">
-        <img src="assets\imagens\morango.png">
-        <img src="assets\imagens\banana.png">
-        <img src="assets\imagens\laranja.png">
-
-        <!--fileira9-->
-        <img src="assets\imagens\banana.png"> 
-        <img src="assets\imagens\produtos.png">
-        <img src="assets\imagens\guarda_chuva.png">
-        <img src="assets\imagens\bombom.png"> <!--doces-->
-        <img src="assets\imagens\morango.png">
-        <img src="assets\imagens\abobora_bruxa.png"> <!-- abobora -->
-        <img src="assets\imagens\carro.png">
-        <img src="assets\imagens\boneca.png">
-        <img src="assets\imagens\bolo.png"> 
-        <img src="assets\imagens\pincel.png">
-
-        <!--fileira10-->
-        <img src="assets\imagens\balas.png">  <!--doces-->
-        <img src="assets\imagens\pincel.png">
-        <img src="assets\imagens\melancia.png">
-        <img class="tamanho" src="assets\imagens\cenoura.png">
-        <img class="tamanho" src="assets\imagens\ovo_pascoa.png">
-        <img src="assets\imagens\verduras.png"> 
-        <img src="assets\imagens\coelhinho.png">
-        <img src="assets\imagens\guarda_chuva.png">
-        <img class="tamanho" src="assets\imagens\ovo_pascoa.png">
-        <img src="assets\imagens\verduras.png">
+        <!--Fileira-1-->
+        <figure><img class="comum" src="/assets/imagens/produtos.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/bolo.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/pascoa.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/guarda_chuva.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/produtos.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/banana.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/bolinho_rosa.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/melancia.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/bebida.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/pincel.png"></figure>
+        <!--Fileira-2-->
+        <figure><img class="comum" src="/assets/imagens/guarda_chuva.png"></figure>
+        <figure><img class="comum" src="/assets/imagens/bebida.png"></figure>
+        <figure><img class="comum" src="assets\imagens\ovo_pascoa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\coelhinho.png"></figure>
+        <figure><img class="comum" src="assets\imagens\bolo.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pascoa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pincel.png"></figure>
+        <figure><img class="comum" src="assets\imagens\melancia.png"></figure>
+        <figure><img class="comum" src="assets\imagens\cenoura.png"></figure>
+        <figure><img class="comum" src="assets\imagens\laranja.png"></figure>
+        <!--Fileira-3-->
+        <figure><img class="comum" src="assets\imagens\produtos.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pascoa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\cenoura.png"></figure>
+        <figure><img class="comum" src="assets\imagens\bolo.png"></figure>
+        <figure><img class="pontos" src="assets\imagens\3aboboras.png"></figure><!--abobora-->
+        <figure><img class="comum" src="assets\imagens\laranja.png"></figure>
+        <figure><img class="comum" rc="assets\imagens\bebida.png"></figure>
+        <figure><img class="comum" src="assets\imagens\verduras.png"></figure>
+        <figure><img class="comum" src="assets\imagens\ovo_pascoa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pincel.png"></figure>
+        <!--Fileira-4-->
+        <figure><img class="pontos" src="assets\imagens\balas.png"></figure><!--balas-->
+        <figure><img class="comum" src="assets\imagens\banana.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pincel.png"></figure>
+        <figure><img class="comum" src="assets\imagens\coelhinho.png"></figure>
+        <figure><img class="comum" src="assets\imagens\carro.png"></figure>
+        <figure><img class="comum" src="assets\imagens\boneca.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pincel_preto.png"></figure>
+        <figure><img class="comum" src="assets\imagens\cenoura.png"></figure>
+        <figure><img class="pontos" src="assets\imagens\abobora.png"></figure><!--abobora-->
+        <figure><img class="comum" src="assets\imagens\bebida.png"></figure>
+        <!--Fileira-5-->
+        <figure><img class="comum" src="assets\imagens\bolinho_rosa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\melancia.png"></figure>
+        <figure><img class="comum" src="assets\imagens\bolo.png"></figure>
+        <figure><img class="comum" src="assets\imagens\boneca.png"></figure>
+        <figure><img class="comum" src="assets\imagens\laranja.png"></figure>
+        <figure><img class="comum" src="assets\imagens\banana.png"></figure>
+        <figure><img class="comum" src="assets\imagens\produtos.png"></figure>
+        <figure><img class="comum" src="assets\imagens\verduras.png"></figure>
+        <figure><img class="comum" src="assets\imagens\melancia.png"></figure>
+        <figure><img class="comum" src="assets\imagens\guarda_chuva.png"></figure>
+        <!--Fileira-6-->
+        <figure><img class="comum" src="assets\imagens\boneca.png"></figure>
+        <figure><img class="comum" src="assets\imagens\banana.png"></figure>
+        <figure><img class="comum" src="assets\imagens\guarda_chuva.png"></figure>
+        <figure><img class="comum" src="assets\imagens\verduras.png"></figure>
+        <figure><img class="comum" src="assets\imagens\carro.png"></figure>
+        <figure><img class="comum" src="assets\imagens\laranja.png"></figure>
+        <figure><img class="pontos" src="assets\imagens\abobora.png"></figure><!--abobora-->
+        <figure><img class="comum" src="assets\imagens\boneca.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pincel.png"></figure>
+        <figure><img class="comum" src="assets\imagens\cenoura.png"></figure>
+        <!--Fileira-7-->
+        <figure><img class="comum" src="assets\imagens\bolo.png"></figure>
+        <figure><img class="comum" src="assets\imagens\carro.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pincel.png"></figure>
+        <figure><img class="comum" src="assets\imagens\melancia.png"></figure>
+        <figure><img class="comum" src="assets\imagens\banana.png"></figure>
+        <figure><img class="comum" src="assets\imagens\produtos.png"></figure>
+        <figure><img class="pontos" src="assets\imagens\fantasma.png"></figure><!--fantasma-->
+        <figure><img class="comum" src="assets\imagens\pascoa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\ovo_pascoa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\melancia.png"></figure>
+        <!--Fileira-8-->
+        <figure><img class="comum" src="assets\imagens\cenoura.png"></figure>
+        <figure><img class="pontos" src="assets\imagens\balas.png"></figure><!--balas-->
+        <figure><img class="comum" src="assets\imagens\bolinho_rosa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\bebida.png"></figure>
+        <figure><img class="comum" src="assets\imagens\guarda_chuva.png"></figure>
+        <figure><img class="pontos" src="assets\imagens\bombom.png"></figure><!--bomboms-->
+        <figure><img class="comum" src="assets\imagens\coelhinho.png"></figure>
+        <figure><img class="comum" src="assets\imagens\morango.png"></figure>
+        <figure><img class="comum" src="assets\imagens\banana.png"></figure>
+        <figure><img class="comum" src="assets\imagens\laranja.png"></figure>
+        <!--Fileira-9-->
+        <figure><img class="comum" src="assets\imagens\banana.png"></figure>
+        <figure><img class="comum" src="assets\imagens\produtos.png"></figure>
+        <figure><img class="comum" src="assets\imagens\guarda_chuva.png"></figure>
+        <figure><img class="pontos" src="assets\imagens\bombom.png"></figure><!--bomboms-->
+        <figure><img class="comum" src="assets\imagens\morango.png"></figure>
+        <figure><img class="pontos" src="assets\imagens\abobora_bruxa.png"></figure><!--abobora-->
+        <figure><img class="comum" src="assets\imagens\carro.png"></figure>
+        <figure><img class="comum" src="assets\imagens\boneca.png"></figure>
+        <figure><img class="comum" src="assets\imagens\bolo.png"></figure>
+        <figure><img class="comum" src="assets\imagens\pincel.png"></figure>
+        <!--Fileira-10-->
+        <figure><img class="pontos" src="assets\imagens\balas.png"></figure><!--balas-->
+        <figure><img class="comum" src="assets\imagens\pincel.png"></figure>
+        <figure><img class="comum" src="assets\imagens\melancia.png"></figure>
+        <figure><img class="comum" src="assets\imagens\cenoura.png"></figure>
+        <figure><img class="comum" src="assets\imagens\ovo_pascoa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\verduras.png"></figure>
+        <figure><img class="comum" src="assets\imagens\coelhinho.png"></figure>
+        <figure><img class="comum" src="assets\imagens\guarda_chuva.png"></figure>
+        <figure><img class="comum" src="assets\imagens\ovo_pascoa.png"></figure>
+        <figure><img class="comum" src="assets\imagens\verduras.png"></figure>
     </div>
 </body>
+<script></script>
 </html>
