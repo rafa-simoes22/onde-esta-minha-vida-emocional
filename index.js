@@ -10,8 +10,12 @@ router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/pagina.html', function (req, res) {
-    res.sendFile(path.join(__dirname, 'pagina.html'));
+// Configurar o middleware express.static para servir arquivos estáticos
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
+// Sua rota para interface.html
+app.get('/interface.html', function (req, res) {
+    res.sendFile(path.join(__dirname, 'interface.html'));
 });
 
 // Rota para processar o login
@@ -29,7 +33,7 @@ router.post('/login', function(req, res) {
                 const userId = results[0].id;
 
                 // Redireciona para "pagina.html" e passa o ID do usuário
-                res.redirect(`/pagina.html?userId=${userId}`);
+                res.redirect(`/interface.html?userId=${userId}`);
             } else {
                 res.send('Credenciais inválidas. Por favor, tente novamente.');
             }

@@ -168,5 +168,70 @@
         <figure><img class="comum" src="assets\imagens\verduras.png"></figure>
     </div>
 </body>
-<script></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    // Adicione eventos de clique nas imagens
+    $(document).ready(function() {
+        $(".comum").click(function() {
+            console.log("Clicou em comum");
+            enviarAcao(false);
+        });
+
+        $(".pontos").click(function() {
+            console.log("Clicou em pontos");
+            enviarAcao(true);
+        });
+    });
+
+    // Função para enviar ação para o servidor
+    function enviarAcao(valor) {
+        $.ajax({
+            url: "/acao",
+            method: "POST",
+            data: { acao: valor.toString() }, // Envie o valor booleano como uma string
+            success: function(response) {
+                console.log(response);
+                // Adicione qualquer manipulação de UI ou redirecionamento aqui, se necessário
+            },
+            error: function(error) {
+                console.error(error);
+                // Adicione tratamento de erro aqui, se necessário
+            }
+        });
+    }
+
+    // Função para obter a contagem de ações True
+    function obterContagemAcoes() {
+        $.ajax({
+            url: "/contagemAcoes",
+            method: "GET",
+            success: function(response) {
+                $("#quantidadeAcoes").text(response);
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    }
+
+    // Função para calcular pontos e atualizar a pontuação
+    function calcularPontos() {
+        $.ajax({
+            url: "/contagemPontos",
+            method: "POST",
+            success: function(response) {
+                $("#pontuacaoAtual").text(response);
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    }
+
+    $(document).ready(function() {
+    // Chame as funções aqui ou adicione eventos de clique conforme necessário
+    obterContagemAcoes();
+    calcularPontos();
+});
+</script>
 </html>
