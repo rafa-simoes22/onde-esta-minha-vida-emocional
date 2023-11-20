@@ -56,19 +56,12 @@ router.post('/signup', function(req, res) {
 // Rota para processar as ações do usuário
 router.post('/acao', function(req, res) {
     const { acao } = req.body;
-    console.log("Valor recebido:", acao);
+    console.log(acao);
 
     // Converter o valor booleano para 0 ou 1
     const valorAcao = acao === 'true' ? 1 : 0;
 
     const userId = obterIdUsuario(req); // Obter o ID do usuário logado da URL
-
-    // Verificar se userId está presente
-    if (!userId) {
-        console.error('ID do usuário não encontrado na URL.');
-        res.status(400).send('ID do usuário não encontrado na URL.');
-        return;
-    }
 
     // Inserir nova ação na tabela ações
     const query = 'INSERT INTO ações (id_users, acao) VALUES (?, ?)';
@@ -81,7 +74,6 @@ router.post('/acao', function(req, res) {
         }
     });
 });
-
 
 
 app.use('/', router);
