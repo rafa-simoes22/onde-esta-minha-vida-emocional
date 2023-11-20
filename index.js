@@ -18,6 +18,10 @@ app.get('/interface.html', function (req, res) {
     res.sendFile(path.join(__dirname, 'interface.html'));
 });
 
+app.get('/final.html', function (req, res) {
+    res.sendFile(path.join(__dirname, 'final.html'));
+});
+
 // Rota para processar o login
 router.post('/login', function(req, res) {
     const { username, password } = req.body;

@@ -170,8 +170,26 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+    // Função para exibir o alerta ao carregar a página
+    function exibirAlerta() {
+        var resposta = confirm("Vamos começar!");
+        if (resposta) {
+            iniciarCronometro();
+        } else {
+            exibirAlerta();
+        }
+    }
+    // Função para iniciar o cronômetro
+    function iniciarCronometro() {
+        setTimeout(function() {
+            // Redirecionar para /final.html após 60 segundos
+            window.location.href = 'final.html';
+        }, 5000); // 60 segundos = 60,000 milissegundos
+    }
+    
     // Adicione eventos de clique nas imagens
     $(document).ready(function() {
+        exibirAlerta();
         $(".comum").click(function() {
             console.log("Clicou em comum");
             enviarAcao(false);
