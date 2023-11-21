@@ -190,14 +190,21 @@
     // Adicione eventos de clique nas imagens
     $(document).ready(function() {
         exibirAlerta();
+
         $(".comum").click(function() {
-            console.log("Clicou em comum");
-            enviarAcao(false);
+            if (!$(this).hasClass("clicada")) {
+                console.log("Clicou em comum");
+                enviarAcao(false);
+                $(this).addClass("clicada");
+            }
         });
 
         $(".pontos").click(function() {
-            console.log("Clicou em pontos");
-            enviarAcao(true);
+            if (!$(this).hasClass("clicada")) {
+                console.log("Clicou em pontos");
+                enviarAcao(true);
+                $(this).addClass("clicada");
+            }
         });
     });
 
