@@ -8,58 +8,132 @@
             body {
                 font-family: Arial, sans-serif;
                 text-align: center;
+                background-color: rgb(10, 10, 10);
+              
+
             }
 
             h1 {
                 margin-top: 20px;
+                
             }
 
             form {
+                
                 display: none;
                 max-width: 300px;
-                margin: 0 auto;
-            }
+                border: 2px solid #ccc;
+                border-radius: 10px; /* Raio da borda para torná-la arredondada */
+                padding: 20px; /* Espaçamento interno dentro da borda */
+                width: 300px; /* Largura do formulário, ajuste conforme necessário */
+                margin:40px auto 0;/* Centralizar o formulário na página */
+                
+    }
 
-            label {
-                display: block;
-                margin-top: 10px;
-            }
+          
 
             input {
                 width: 100%;
                 padding: 5px;
-                margin-top: 5px;
+                margin-top: 10px;
+                margin-left: -5px;
+                border-radius: 7px;
+                border-color: #ccc;     
+            }
+            #imagem {
+                width: 150px;
+              
+                
+            }
+            .titulo {
+                background-color:  rgba(228, 150, 5, 0.986);
+                margin: -8px;
+            }
+            #imagem2 {
+                margin-left: -20%;
+            }
+            
+            #fantasma {
+                margin-left: 20%;
+            }
+           
+            .botao {
+                width: 75px;
+                height: 30px;
+                margin-top: 10px;
+                text-align: center;
+                border-radius:30px;
+                background-color: rgb(156, 156, 223);
+                border: 5px;
+                cursor: pointer;
+                transition: background-color 0.1s ease;
+
+            }
+            .botao:hover {
+                background-color:rgb(117, 117, 241);; /* Cor de fundo ao passar o mouse */
+            }
+            h1 {
+                color: rgb(255, 255, 255);
             }
 
-            button {
-                margin-top: 10px;
+
+   
+            .figura {
+                margin-left: 30%;
+             
+               width: 300px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+               
             }
+            #boo {
+                margin-left: 60%;
+            }
+            .link {
+                color: rgb(255, 255, 255);
+            }
+
+           
         </style>
     </head>
     <body>
+    <div class="titulo">    
+        <img id="imagem" src="bruxa-removebg-preview.png" alt="">
+    </div>  
+      
         <form id="loginForm" action="/login" method="post" style="display: block;">
             <h1>Login</h1>
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required>
+            
+            <input type="text" id="username" name="username" placeholder="Usuário:" required>
             <br>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
+            
+            <input type="password" id="password" name="password" placeholder="Senha:" required>
             <br>
-            <button type="submit">Login</button>
-            <p><a href="javascript:void(0)" onclick="showSignupForm()">Fazer Cadastro</a></p>
+            <button class="botao" type="submit">Entrar</button>
+            <p><a  class="link" href="javascript:void(0)" onclick="showSignupForm()">Fazer Cadastro</a></p>
         </form>
 
         <form id="signupForm" action="/signup" method="post" style="display: none;">
             <h1>Cadastro</h1>
-            <label for="newUsername">Digite seu nome:</label>
-            <input type="text" id="newUsername" name="newUsername" required>
+           
+            <input type="text" id="newUsername" name="newUsername" placeholder="Digite seu nome:" required>
             <br>
-            <label for="newPassword">Defina uma senha: (Somente números)</label>
-            <input type="password" id="newPassword" name="newPassword" required>
+           
+            <input type="password" id="newPassword" name="newPassword" placeholder="Defina uma senha: (somente numeros)" required>
             <br>
-            <button type="submit">Cadastrar</button>
-            <p><a href="javascript:void(0)" onclick="showLoginForm()">Voltar para o Login</a></p>
+            <button class="botao" type="submit">Cadastrar</button>
+            <p><a class="link" href="javascript:void(0)" onclick="showLoginForm()">Voltar para o Login</a></p>
         </form>
+
+
+        <div class="figura">
+          
+        <img id="boo" src="boo-removebg-preview.png" alt="">
+        <img id="fantasma" src="fantasmaa-removebg-preview.png" alt="">
+      
+    </div>
+
+        
 
         <script>
             function showSignupForm() {
